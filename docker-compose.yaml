@@ -1,0 +1,18 @@
+services:
+  byedpi:
+    image: ghcr.io/psauxwwf/byedpi:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      cache_from:
+        - type=registry,ref=ghcr.io/psauxwwf/byedpi:latest
+      cache_to:
+        - type=inline
+    container_name: byedpi
+    hostname: byedpi
+    environment:
+      BYEDPI_PORT: ${BYEDPI_PORT:-3080}
+      BYEDPI_OPTIONS: ${BYEDPI_OPTIONS:-}
+    restart: unless-stopped
+    user: 1000:1000
+    network_mode: "host"

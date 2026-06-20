@@ -4,6 +4,7 @@ WORKDIR /usr/local/src/byedpi
 COPY . .
 RUN LDFLAGS=-static make
 
-FROM scratch AS ciadpi
-COPY --from=build /usr/local/src/byedpi/ciadpi /bin/
-ENTRYPOINT ["/bin/ciadpi"]
+FROM docker.io/alpine AS runtime
+COPY --from=build /usr/local/src/byedpi/ciadpi /bin/ciadpi
+COPY --chmod=755 entrypoint.sh /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

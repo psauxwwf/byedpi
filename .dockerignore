@@ -1,6 +1,9 @@
 .git
+.github
 .vscode
+.env
 dist
 *.o
 ciadpi
 ciadpi.exe
+docker-compose.yaml

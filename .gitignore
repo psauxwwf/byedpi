@@ -5,3 +5,4 @@ ciadpi
 compile_flags.txt
 /.env
 /ChatExport_2026-06-20
+/__pycache__

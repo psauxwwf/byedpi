@@ -1,6 +1,8 @@
 Implementation of some DPI bypass methods.
 The program is a local SOCKS proxy server.
 
+Ready-made strategies are available in [`STRATEGY.txt`](STRATEGY.txt).
+
 Usage example:
 
 ```
@@ -386,6 +388,8 @@ docker compose up -d
 - `network_mode: host`
 - порт из `BYEDPI_PORT`
 - стратегию из `BYEDPI_OPTIONS`
+
+Готовые стратегии лежат в [`STRATEGY.txt`](STRATEGY.txt).
 
 Если нужен свой набор параметров, отредактируйте `.env`:
 

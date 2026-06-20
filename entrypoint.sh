@@ -6,12 +6,13 @@ if [ "$#" -gt 0 ]; then
 fi
 
 port="${BYEDPI_PORT:-3080}"
+ip="${BYEDPI_IP:-127.0.0.1}"
 options="${BYEDPI_OPTIONS:-}"
 
 if [ -n "$options" ]; then
 	# Re-parse the options string so quoted host lists stay intact.
-	eval "set -- --port \"$port\" $options"
+	eval "set -- --ip \"$ip\" --port \"$port\" $options"
 	exec /bin/ciadpi "$@"
 fi
 
-exec /bin/ciadpi --port "$port"
+exec /bin/ciadpi --ip "$ip" --port "$port"

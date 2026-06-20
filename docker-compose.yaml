@@ -11,6 +11,7 @@ services:
     container_name: byedpi
     hostname: byedpi
     environment:
+      BYEDPI_IP: ${BYEDPI_IP:-127.0.0.1}
       BYEDPI_PORT: ${BYEDPI_PORT:-3080}
       BYEDPI_OPTIONS: ${BYEDPI_OPTIONS:-}
     restart: unless-stopped

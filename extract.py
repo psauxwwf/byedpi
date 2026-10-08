@@ -6,7 +6,6 @@ import re
 import sys
 from pathlib import Path
 
-
 OPTION_RE = re.compile(r"(?:^|\s)-{1,2}[A-Za-z]")
 
 
